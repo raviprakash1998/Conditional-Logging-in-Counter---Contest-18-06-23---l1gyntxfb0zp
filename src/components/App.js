@@ -4,7 +4,11 @@ import '../styles/App.css';
 class App extends React.Component{
   
   handleClick(){
-    this.setState({count: this.state.count + 1})
+    this.setState({count: this.state.count + 1}, () => {
+      if(this.state.count % 2 == 0) {
+        this.forceUpdate();
+    }
+    })
   }
   constructor(props){
     super(props)
