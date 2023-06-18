@@ -8,9 +8,10 @@ class App extends React.Component{
     this.state = {count:0}
   }
   
-  handleClick(){
-    this.setState({count: this.state.count + 1}, () => {
-      if(this.state.count % 2 == 0) {
+  handleClick = () => {
+    const {count} = this.state;
+    this.setState({count: count + 1}, () => {
+      if(this.state.count % 2 === 0) {
         this.forceUpdate();
         console.log(`Rendering with count:-${this.state.count}`)
       }
