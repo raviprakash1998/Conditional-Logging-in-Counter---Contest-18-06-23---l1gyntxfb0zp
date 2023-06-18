@@ -7,6 +7,8 @@ class App extends React.Component{
     this.setState({count: this.state.count + 1}, () => {
       if(this.state.count % 2 == 0) {
         this.forceUpdate();
+        
+    console.log(`Rendering with count:-${this.state.count}`)
     }
     })
   }
@@ -18,7 +20,6 @@ class App extends React.Component{
 
 
   render(){
-    console.log(`Rendering with count:-${this.state.count}`)
     return(
       <div>
         <span id="count">{this.state.count}</span>
